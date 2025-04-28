@@ -7,79 +7,60 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       height: 100vh;
       background: url('Q324-BG.jpg') no-repeat center center/cover;
       overflow: hidden;
-      position: relative;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    h1 {
+    .planet {
       position: absolute;
-      top: 5%;
-      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-      color: #fff;
+      color: white;
       font-size: 48px;
-      text-shadow: 0 0 10px #ffffff, 0 0 20px #ff99ff, 0 0 30px #ff66ff;
-      z-index: 10;
+      text-shadow: 0 0 10px #ffffff, 0 0 20px #88f, 0 0 30px #88f;
     }
 
-    /* Các orbit */
     .orbit {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 350px;
-      height: 350px;
-      margin-left: -175px;
-      margin-top: -175px;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
       animation: spin 30s linear infinite;
-      transform-origin: center center;
     }
 
-    .orbit1 { animation-duration: 25s; }
-    .orbit2 { animation-duration: 35s; }
-    .orbit3 { animation-duration: 40s; }
-
-    /* Quay quanh */
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    /* Vệ tinh */
     .satellite {
       position: absolute;
-      top: 0;
-      left: 50%;
-      width: 120px;
-      height: auto;
-      transform: translateX(-50%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: contain;
     }
 
-    /* Optional: hiệu ứng vệ tinh lung linh */
-    .satellite {
-      filter: drop-shadow(0 0 5px white);
+    .sat1 { top: 0; left: 50%; transform: translateX(-50%); }
+    .sat2 { top: 50%; left: 100%; transform: translateY(-50%); }
+    .sat3 { bottom: 0; left: 50%; transform: translateX(-50%); }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
   </style>
 </head>
-
 <body>
-  <h1>TINH CẦU Q324</h1>
 
-  <div class="orbit orbit1">
-    <img src="satellite1.png" alt="Vệ Tinh 1" class="satellite">
-  </div>
+<div class="planet">Tinh cầu Q324</div>
 
-  <div class="orbit orbit2">
-    <img src="satellite2.png" alt="Vệ Tinh 2" class="satellite">
-  </div>
-
-  <div class="orbit orbit3">
-    <img src="satellite3.png" alt="Vệ Tinh 3" class="satellite">
-  </div>
+<div class="orbit">
+  <img src="IMG_5699.png" class="satellite sat1">
+  <img src="IMG_5700.png" class="satellite sat2">
+  <img src="IMG_5701.png" class="satellite sat3">
+</div>
 
 </body>
 </html>
