@@ -2,65 +2,89 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tinh cầu Q324</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tinh Cầu Q324</title>
   <style>
-    body {
+    /* Reset default */
+    * {
       margin: 0;
-      height: 100vh;
-      background: url('Q324-BG.jpg') no-repeat center center/cover;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
       overflow: hidden;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .planet {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('Q324-BG.jpg') no-repeat center center/cover;
+      position: relative;
       color: white;
-      font-size: 48px;
-      text-shadow: 0 0 10px #ffffff, 0 0 20px #88f, 0 0 30px #88f;
     }
 
-    .orbit {
+    .text-container {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 400px;
-      height: 400px;
-      animation: spin 30s linear infinite;
+      top: 10%;
+      right: 5%;
+      text-align: right;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px #fff, 0 0 20px #9cf, 0 0 30px #0ff;
+      animation: glow 2s infinite alternate;
+    }
+
+    .subtitle {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      font-weight: 300;
+      opacity: 0.8;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #9cf, 0 0 30px #0ff;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #9cf, 0 0 40px #0ff;
+      }
     }
 
     .satellite {
       position: absolute;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: contain;
+      width: 120px;
+      height: auto;
+      animation: rotate 20s linear infinite;
+      transform-origin: center center;
     }
 
-    .sat1 { top: 0; left: 50%; transform: translateX(-50%); }
-    .sat2 { top: 50%; left: 100%; transform: translateY(-50%); }
-    .sat3 { bottom: 0; left: 50%; transform: translateX(-50%); }
-
-    @keyframes spin {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
     }
+
+    /* Vị trí vệ tinh */
+    .sat1 { top: 20%; left: 10%; }
+    .sat2 { top: 50%; left: 70%; }
+    .sat3 { top: 70%; left: 30%; }
   </style>
 </head>
 <body>
+  <div class="text-container">
+    <div class="title">TINH CẦU Q324</div>
+    <div class="subtitle">Xin chào phi hành gia đi lạc...!</div>
+  </div>
 
-<div class="planet">Tinh cầu Q324</div>
-
-<div class="orbit">
-  <img src="IMG_5699.PNG" class="satellite sat1">
-  <img src="IMG_5700.PNG" class="satellite sat2">
-  <img src="IMG_5701.PNG" class="satellite sat3">
-</div>
+  <!-- Vệ tinh -->
+  <img src="satellite1.png" alt="Satellite 1" class="satellite sat1">
+  <img src="satellite2.png" alt="Satellite 2" class="satellite sat2">
+  <img src="satellite3.png" alt="Satellite 3" class="satellite sat3">
 
 </body>
 </html>
